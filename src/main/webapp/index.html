@@ -2,15 +2,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome-TicketBooking</title>
+<title>WeLearn</title>
 </head>
 <style type="text/css">
-	.form-control{
-	padding:20px;
-	}
 	table{
 	border:none;
-	padding:10px;
 	}
 	td{
 	border:none;
@@ -20,9 +16,23 @@
 	margin-left:30%;
 	border-radius:20px;
 	}
+	body{
+	background: rgb(212,212,226);
+background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
+	}
+	.title{
+	text-align:center;
+	}
+	.main-container{
+	display:block;
+	margin-left:15%;
+	}
 </style>
 <body>
-<header><h4>Please Login!</h4></header>
+<h3 class="title">Welcome to BookTickets</h3>
+<hr>
+<div class="main-container">
+<h4>Please Login!</h4>
 <form action="login" method="post" class="form-control">
 	<table>
 	<tr>
@@ -36,5 +46,6 @@
 	</table>
 	<input type="submit" value="Login" class="login-btn">
 </form>
+</div>
 </body>
 </html>

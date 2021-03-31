@@ -2,11 +2,42 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome</title>
+<title>WeLearn</title>
 </head>
+<style type="text/css">
+	body{
+		background: rgb(212,212,226);
+		background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
+		}
+	.container{
+	display:block;
+	position:relative;
+	margin-left:15%;
+	padding:10px;
+	}
+	.title{
+	text-align:center;
+	
+	}
+</style>
 <body>
-
-<h1>Welcome User!</h1>
+<h3 class="title">Enroll in a Course</h3>
+<hr>
+<div class="container">
+<form>
+<label>Choose Course</label><br>
+<select name="course">
+<option value="java">Java</option>
+<option value="python">Python</option>
+<option value="ui">UI/UX</option>
+</select><br>
+<label>Choose Course Level</label><br>
+<input type="radio" name="level" value="beginner">Beginner<br>
+<input type="radio" name="level" value="intermediate">Intermediate<br>
+<input type="radio" name="level" value="advanced">Advanced<br>
+<input type="button" value="Enroll">
+</form>
+</div>
 
 </body>
 </html>

@@ -19,12 +19,21 @@
 	text-align:center;
 	
 	}
+	.logout-btn{
+	padding:5px;
+	margin-left:30%;
+	border-radius:20px;
+	}
+	input, select {
+	margin-bottom:10px;
+	}
+	
 </style>
 <body>
 <h3 class="title">Enroll in a Course</h3>
 <hr>
 <div class="container">
-<form>
+<form action="course-enroll" method="post">
 <label>Choose Course</label><br>
 <select name="course">
 <option value="java">Java</option>
@@ -32,12 +41,12 @@
 <option value="ui">UI/UX</option>
 </select><br>
 <label>Choose Course Level</label><br>
-<input type="radio" name="level" value="beginner">Beginner<br>
+<input type="radio" name="level" value="beginner" required>Beginner<br>
 <input type="radio" name="level" value="intermediate">Intermediate<br>
 <input type="radio" name="level" value="advanced">Advanced<br>
-<input type="button" value="Enroll">
+<input type="submit" value="Enroll" />
 </form>
 </div>
-
+<a href="/DWP/logout"><button class="logout-btn">Logout</button></a>
 </body>
 </html>

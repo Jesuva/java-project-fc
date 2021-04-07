@@ -1,3 +1,4 @@
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,31 +6,11 @@
 <title>WeLearn</title>
 </head>
 <style type="text/css">
-	table{
-	border:none;
-	}
-	td{
-	border:none;
-	}
-	.login-btn{
-	padding:5px;
-	margin-left:30%;
-	border-radius:20px;
-	}
-	body{
-	background: rgb(212,212,226);
-background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
-	}
-	.title{
-	text-align:center;
-	}
-	.main-container{
-	display:block;
-	margin-left:15%;
-	}
+	<%@ include file="../css/style.css" %>	
+	
 </style>
 <body>
-<h3 class="title">Welcome to WeLearn</h3>
+<%@ include file="header.jsp" %>
 <hr>
 <div class="main-container">
 <h4>Please Login!</h4>

@@ -1,0 +1,91 @@
+@charset "ISO-8859-1";
+
+table{
+	border:none;
+	}
+	
+	td{
+	border:none;
+	}
+	
+	.login-btn{
+	padding:5px;
+	margin-left:30%;
+	border-radius:20px;
+	}
+	
+	body{
+	background: rgb(212,212,226);
+background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
+	}
+	
+	.title{
+	text-align:center;
+	}
+	
+	.main-container{
+	display:block;
+	margin-left:15%;
+	}
+	
+		#user-box {
+         float:left; 
+         width:25%;
+         
+     }
+     
+     #title-box{
+         float:left; 
+         width:50%;
+     }
+     
+     #logout-box{
+     margin-top:2%;
+         float:right;
+         width:25%;
+     }
+     
+	label{
+	font-weight:bold;
+	}
+	
+	.logout-btn{
+	padding:5px;
+	margin-left:70%;
+	border-radius:20px;
+	}
+	
+	input, select {
+	margin-bottom:10px;
+	}
+	
+	.btn{
+	margin-top:10px;
+	padding:5px;
+	}
+	
+	.header{
+	width:100%;
+	}
+	
+	.container{
+	display:inline-block;
+	position:relative;
+	margin-left:15%;
+	padding:10px;
+	margin-top:2%;
+	}
+	
+	.confirm-course-container{
+	margin:auto;
+	paddding:10px;
+	display:block;
+	text-align:center;
+}
+
+.active{
+	background-color:rgba(0, 230, 77, 0.8);
+	display:inline-block;
+	border-radius:15px;
+	border: 1px solid green;
+}

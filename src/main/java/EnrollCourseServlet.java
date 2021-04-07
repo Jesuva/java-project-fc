@@ -15,7 +15,7 @@ public class EnrollCourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("enrollcourse.html");
+		RequestDispatcher rd = request.getRequestDispatcher("enrollcourse.jsp");
 		rd.include(request, response);
 	}
 

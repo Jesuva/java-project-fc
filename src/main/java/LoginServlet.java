@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.include(request, response);
 	}
 
@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 		else{
 			response.setContentType("text/html");  
 			response.getWriter().print("Invalid User!");
-			RequestDispatcher rd=request.getRequestDispatcher("index.html");  
+			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
 	        rd.include(request, response);  
 		}
 	}

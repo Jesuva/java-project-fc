@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 
 @WebFilter("/*")
-public class DisableCache implements Filter {
+public class DisableCacheFilter implements Filter {
 
    
 	public void destroy() {

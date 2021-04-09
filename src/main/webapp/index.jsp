@@ -1,16 +1,15 @@
-<%@ page session="false" %>
 <!DOCTYPE html>
+<%@ page session="false" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>WeLearn</title>
 </head>
 <style type="text/css">
-	<%@ include file="../css/style.css" %>	
-	
+<%@ include file="../css/style.css" %>
 </style>
 <body>
-<%@ include file="header.jsp" %>
+<h3 class="title">WeLearn</h3>
 <hr>
 <div class="main-container">
 <h4>Please Login!</h4>

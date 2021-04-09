@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -30,26 +29,17 @@ public class LoginServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		HttpSession session = request.getSession(false);
 		try {
-		if(password.equals("user")) {
-			if(session==null) {
+		if(password.equals("user") && (session==null) ) {
 				session = request.getSession();
 				session.setAttribute("name", userName);
-				response.sendRedirect("course-enroll");
-			}
-			else if(userName.equals((String)session.getAttribute("name"))) {
-				response.setContentType("text/html");
-				PrintWriter out = response.getWriter();
-				out.println("<meta http-equiv='refresh' content='2;URL=course-enroll'>");
-				out.println("<h3 style='color:red;text-align:center;margin-top:15%'>Welcome Back, Your session is not expired yet!<br>Last Login Time - ");
-				out.println(new Date(session.getCreationTime())+"</h3>");
-			}
-			else {
-				session.invalidate();
-				session = request.getSession();
-				session.setAttribute("name", userName);
-				response.sendRedirect("course-enroll");
-			}
-			
+				session.setAttribute("role", password);
+				response.sendRedirect("user/course-enroll");
+		}
+		else if(password.equals("admin") && (session==null)) {
+			session = request.getSession();
+			session.setAttribute("name", userName);
+			session.setAttribute("role", password);
+			response.sendRedirect("admin/dashboard");
 		}
 		else{
 			response.setContentType("text/html");  

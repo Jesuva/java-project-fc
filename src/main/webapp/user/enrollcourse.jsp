@@ -5,36 +5,16 @@
 <title>WeLearn</title>
 </head>
 <style type="text/css">
-	
 <%@ include file="../css/style.css" %>	
-	
-
 </style>
 <body>
-<%@ include file="header.jsp" %>
-<div id = "user-box">
-<div class="active">
-<h4 style="font-style:bold;">
-<small>Hey!, </small>
-<% String userName = (String)session.getAttribute("name");
-   out.print(userName);
-%>
-</h4>
-</div>
-</div> 
-<div id = "title-box">
-    <h3 class="title">Enroll in a Course</h3>
-</div>
-  
-<div id = "logout-box">
- <a href="/DWP/logout"><button class="logout-btn">Logout</button></a>
-</div>
+<%@ include file="../partials/header.jsp" %>
 <div class="container">
-<p>The WeLearn is the Online Learning Platform Where you can enroll in any of the available courses<br>
+<p>The WeLearn is the Online Learning Platform Where you can enroll in any of the available courses.<br>
 Currently we are providing Three Major Course (JAVA,Python, and UI). The best part about enrolling to the course in our
-<br> platform is that we provide the levels for each courses (Beginner,Intermediate and Advanced) <br>
+<br> platform is that, we provide the levels for each courses (Beginner,Intermediate and Advanced) <br>
 So that you may not be wasting time on the concepts that you already Learnt,</p>
-<h3>HAppy Learning!</h3>
+<h3>Happy Learning!</h3>
 </div>
 <div class="container">
 <form action="course-enroll" method="post">

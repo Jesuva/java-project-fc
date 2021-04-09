@@ -16,7 +16,7 @@ table{
 	
 	body{
 	background: rgb(212,212,226);
-background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
+	background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97%, rgba(2,0,36,1) 100%);
 	}
 	
 	.title{
@@ -40,7 +40,7 @@ background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97
      }
      
      #logout-box{
-     margin-top:2%;
+     margin-top:1.3%;
          float:right;
          width:25%;
      }
@@ -55,7 +55,7 @@ background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97
 	border-radius:20px;
 	}
 	
-	input, select {
+	input, select, textarea {
 	margin-bottom:10px;
 	}
 	
@@ -66,6 +66,7 @@ background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97
 	
 	.header{
 	width:100%;
+	display:inline-block;
 	}
 	
 	.container{
@@ -84,8 +85,6 @@ background: linear-gradient(90deg, rgba(212,212,226,1) 47%, rgba(0,212,255,1) 97
 }
 
 .active{
-	background-color:rgba(0, 230, 77, 0.8);
-	display:inline-block;
-	border-radius:15px;
-	border: 1px solid green;
+	color:rgb(0, 128, 43);
+	text-shadow: 0 0 1px #000;	
 }

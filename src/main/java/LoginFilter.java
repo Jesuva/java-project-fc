@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebFilter("/course-enroll")
+@WebFilter( urlPatterns={"/user/*","/admin/*"})
 public class LoginFilter implements Filter {
 
 	public void destroy() {
@@ -32,7 +32,7 @@ public class LoginFilter implements Filter {
 		else {
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
-			out.println("<meta http-equiv='refresh' content='2;URL=login'>");
+			out.println("<meta http-equiv='refresh' content='2;URL=../login'>");
 			out.println("<h3 style='color:red;text-align:center;margin-top:15%'>User Session Expired, Please Login!</h3>");
 
 		}

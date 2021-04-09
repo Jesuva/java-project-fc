@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class ConfirmSubscriptionServlet extends HttpServlet {
+public class AdminDashboard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session.getAttribute("role").equals("user")) {
-			RequestDispatcher rd = request.getRequestDispatcher("../user/courseConfirm.jsp");
+		if(session.getAttribute("role").equals("admin")) {
+			RequestDispatcher rd = request.getRequestDispatcher("../admin/dashboard.jsp");
 			rd.forward(request, response);
 		}
 		else {
@@ -27,13 +27,13 @@ public class ConfirmSubscriptionServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			session.invalidate();
 			out.println("<meta http-equiv='refresh' content='2;URL=../login'>");
-			out.println("<h3 style='color:red;text-align:center;margin-top:15%'>Admin can not view this page, Please Login using User Account!</h3>");
+			out.println("<h3 style='color:red;text-align:center;margin-top:15%'>Users can not view this page, Please Login using Admin Account!</h3>");
 		}
-		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		doGet(request, response);
 	}
 

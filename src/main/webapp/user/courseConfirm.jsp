@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>WeLearn</title>
 </head>
 <style type="text/css">
 <%@ include file="../css/style.css" %>
@@ -16,7 +16,7 @@
 <h3>Hi <% out.print((String)session.getAttribute("name")); %> !<br>
 You have enrolled for the <% out.print((String)session.getAttribute("course")); %> course, <% out.print((String)session.getAttribute("level")); %> level!</h3>
 <h1>Happy Learning!</h1>
-<a href="/DWP/course-enroll"><button>Back To course</button></a>
+<a href="/DWP/user/course-enroll"><button>Back To course</button></a>
 </div>
 
 </body>

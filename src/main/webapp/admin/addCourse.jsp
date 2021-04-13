@@ -22,11 +22,14 @@ stick to our policy of letting the user to choose their levels!</p>
 <input type="text" name="courseName" required><br>
 <label>Chapters</label><br>
 <input type="text" name="chapters" required><br>
+<label>Price</label><br>
+<input type="text" name="price" required><br>
 <label>Course Description</label><br>
-<textarea style="resize:none" name="courseDiscription"></textarea><br>
+<textarea style="resize:none" name="courseDescription" required></textarea><br>
 <input type="submit" value="Add Course">
 </form>
+<a href="/DWP/admin/view-course" style="float:right;margin-left:10px;"><button>View Courses</button></a>
+<a href="../admin/dashboard" style="float:right;"><button>Back to Dashboard</button></a>
 </div>
-<a href="../admin/dashboard"><button>Back to Dashboard</button></a>
 </body>
 </html>

@@ -10,14 +10,16 @@
 <%@ include file="../css/style.css" %>
 </style>
 <body>
+<%@ include file="../partials/header.jsp" %>
+<div class="container">
 <h2 class="title">WeLearn</h2>
 <div class="confirm-course-container">
 <h4>Thanks for Adding New Course!</h4>
 <h3>Hi ${sessionScope.name } !<br>
-Thanks for adding a new course titled as ${param.courseName } !</h3>
+Thanks for adding a new course titled as ${sessionScope.courseName } !</h3>
 <h1>Happy Teaching!</h1>
 <a href="/DWP/admin/add-course"><button>Back To course</button></a>
 </div>
-
+</div>
 </body>
 </html>

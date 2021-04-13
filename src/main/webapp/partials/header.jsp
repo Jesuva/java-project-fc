@@ -1,16 +1,9 @@
-<div class="header">
-<div id = "user-box">
-<h4 class="active">
-<small style="color:black;">Hey!, </small>
-${sessionScope.name}
-</h4>
-</div> 
-<div id = "title-box">
-    <h3 class="title">WeLearn</h3>
+
+<div class="topnav">
+  <a style="font-size:24px;"><span style="color:red">We</span>Learn</a>
+  <a href="/DWP/logout" style="float:right">Logout</a>
+  <a class="active" style="float:right;">Hey!,${sessionScope.name}</a>
 </div>
-  
-<div id = "logout-box">
- <a href="/DWP/logout"><button class="logout-btn">Logout</button></a>
-</div>
-</div>
-<hr>
+
+
+

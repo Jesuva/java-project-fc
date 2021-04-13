@@ -19,11 +19,9 @@ Make sure you stick to our policy of fragmenting the course into three categorie
 (Beginner, Intermediate and Advanced)<br>
 </p>
 <h2>Happy Teaching!</h2>
-
-</div>
 <div class="title">
 <a href="/DWP/admin/add-course"><button>Add Course</button></a>
-<a href="#"><button>View Courses</button></a>
+<a href="/DWP/admin/view-course"><button>View Courses</button></a>
 </div>
 </body>
 </html>

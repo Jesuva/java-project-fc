@@ -15,6 +15,14 @@
   </servlet-mapping>
   
   <servlet>
+  <servlet-name>signup</servlet-name>
+  <servlet-class>SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>signup</servlet-name>
+  <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  <servlet>
   <servlet-name>enrollCourse</servlet-name>
   <servlet-class>EnrollCourseServlet</servlet-class>
   </servlet>
@@ -44,7 +52,7 @@
   
   <servlet>
   <servlet-name>dashboard</servlet-name>
-  <servlet-class>AdminDashboard</servlet-class>
+  <servlet-class>AdminDashboardServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>dashboard</servlet-name>
@@ -53,7 +61,7 @@
   
   <servlet>
   <servlet-name>addCourse</servlet-name>
-  <servlet-class>AddCourse</servlet-class>
+  <servlet-class>AddCourseServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>addCourse</servlet-name>
@@ -61,8 +69,17 @@
   </servlet-mapping>
   
   <servlet>
+  <servlet-name>viewCourse</servlet-name>
+  <servlet-class>ViewCourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>viewCourse</servlet-name>
+  <url-pattern>/admin/view-course</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   <servlet-name>addCourseConfirm</servlet-name>
-  <servlet-class>AddCourseConfirm</servlet-class>
+  <servlet-class>AddCourseConfirmServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>addCourseConfirm</servlet-name>
@@ -80,13 +97,5 @@
   <exception-type>java.lang.Throwable</exception-type>
   <location>/error-handler</location>
   </error-page>
-  
-  <jsp-config>
-<taglib>
-<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
-<taglib-location>/WEB-INF/c.tld</taglib-location>
-</taglib>
-</jsp-config>
-
 
 </web-app>

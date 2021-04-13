@@ -2,6 +2,11 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -17,10 +22,35 @@ public class EnrollCourseServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		
 		if(session!=null) {
 			if (session.getAttribute("role").equals("user")) {
-				RequestDispatcher rd = request.getRequestDispatcher("../user/enrollcourse.jsp");
-				rd.include(request, response);
+				List<CourseDetails> courses = new ArrayList<CourseDetails>();
+				try {
+					Connection con;
+					con = DatabaseConnection.initializeDatabase();
+					PreparedStatement ps = con.prepareStatement("SELECT * FROM welearn.courses where isActive=1;\r\n"
+							+ "");
+					ResultSet rs = ps.executeQuery();
+					if (rs.next()) {
+						while(rs.next()) {
+							String name = rs.getString("courseName");
+							String description = rs.getString("courseDescription");
+							String chapters = rs.getString("chapters");
+							int price = rs.getInt("coursePrice");
+							courses.add( new CourseDetails(name,description,chapters,price));
+							
+						}
+					}
+					request.setAttribute("courseList", courses);
+					RequestDispatcher rd = request.getRequestDispatcher("../user/enrollcourse.jsp");
+					rd.include(request, response);
+					
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+
 			}
 			else {
 				response.setContentType("text/html");

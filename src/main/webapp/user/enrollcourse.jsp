@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,19 +12,14 @@
 <body>
 <%@ include file="../partials/header.jsp" %>
 <div class="container">
-<p>The WeLearn is the Online Learning Platform Where you can enroll in any of the available courses.<br>
-Currently we are providing Three Major Course (JAVA,Python, and UI). The best part about enrolling to the course in our
-<br> platform is that, we provide the levels for each courses (Beginner,Intermediate and Advanced) <br>
-So that you may not be wasting time on the concepts that you already Learnt,</p>
-<h3>Happy Learning!</h3>
-</div>
-<div class="container">
-<form action="course-enroll" method="post">
+
+<h3 class="title">Enroll Now!</h3>
+<form action="course-enroll" method="post" >
 <label>Choose Course</label><br>
 <select name="course">
-<option value="Java">Java</option>
-<option value="Python">Python</option>
-<option value="UI">UI/UX</option>
+<c:forEach var="item" items="${courseList }">
+<option value="${item.name }">${item.name }</option>
+</c:forEach>
 </select><br>
 <label>Choose Course Level</label><br>
 <input type="radio" name="level" value="beginner" required>Beginner<br>
@@ -31,5 +28,28 @@ So that you may not be wasting time on the concepts that you already Learnt,</p>
 <input class="btn" type="submit" value="Enroll" />
 </form>
 </div>
+<div class="container">
+<h3 class="title">Available Courses</h3>
+<table style="margin:auto;">
+<tr>
+<th>Si.No</th>
+<th>Course Name</th>
+<th>Course Description</th>
+<th>Chapters</th>
+<th>Price</th>
+</tr>
+<c:forEach var="course" items="${courseList }" varStatus="counter">
+<tr>
+<td>${counter.count }</td>
+<td>${course.name }</td>
+<td>${course.description }</td>
+<td>${course.chapters }</td>
+<td>${course.price }</td>
+</tr>
+</c:forEach>
+</table>
+</div>
+
+<br><br>
 </body>
 </html>

@@ -10,6 +10,8 @@
 <%@ include file="../css/style.css" %>
 </style>
 <body>
+<%@ include file="../partials/header.jsp" %>
+<div class="container">
 <h2 class="title">WeLearn</h2>
 <div class="confirm-course-container">
 <h4>Thanks for Subscribing!</h4>
@@ -18,6 +20,6 @@ You have enrolled for the <% out.print((String)session.getAttribute("course")); 
 <h1>Happy Learning!</h1>
 <a href="/DWP/user/course-enroll"><button>Back To course</button></a>
 </div>
-
+</div>
 </body>
 </html>

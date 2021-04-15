@@ -6,6 +6,7 @@ public class DatabaseConnection {
     public static Connection initializeDatabase()
         throws SQLException, ClassNotFoundException
     {
+    	
         String dbDriver = "com.mysql.jdbc.Driver";
         String dbURL = "jdbc:mysql://localhost:3307/";
         String dbName = "welearn";

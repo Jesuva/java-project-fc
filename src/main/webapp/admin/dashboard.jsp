@@ -21,7 +21,8 @@ Make sure you stick to our policy of fragmenting the course into three categorie
 <h2>Happy Teaching!</h2>
 <div class="title">
 <a href="/DWP/admin/add-course"><button>Add Course</button></a>
-<a href="/DWP/admin/view-course"><button>View Courses</button></a>
+<a href="/DWP/admin/view-course"><button>View Courses Created By You</button></a>
+<a href="/DWP/admin/view-all-courses"><button>View All Available Courses</button></a>
 </div>
 </body>
 </html>

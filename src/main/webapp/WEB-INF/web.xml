@@ -76,6 +76,15 @@
   <servlet-name>viewCourse</servlet-name>
   <url-pattern>/admin/view-course</url-pattern>
   </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>viewAllCourse</servlet-name>
+ <servlet-class>ViewAllCourses</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>viewAllCourse</servlet-name>
+ <url-pattern>/admin/view-all-courses</url-pattern>
+ </servlet-mapping>
   
   <servlet>
   <servlet-name>addCourseConfirm</servlet-name>

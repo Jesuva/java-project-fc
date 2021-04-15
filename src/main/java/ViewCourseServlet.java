@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,19 +23,21 @@ public class ViewCourseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		List<CourseDetails> courses = new ArrayList<CourseDetails>();
+		int userId = (int)session.getAttribute("id");
 		try {
 			Connection con;
 			con = DatabaseConnection.initializeDatabase();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM welearn.courses where isActive=1;\r\n"
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM welearn.courses where isActive=1 and created_by="+userId+";\r\n"
 					+ "");
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			if (rs!=null) {
 				while(rs.next()) {
 					String name = rs.getString("courseName");
 					String description = rs.getString("courseDescription");
 					String chapters = rs.getString("chapters");
 					int price = rs.getInt("coursePrice");
-					courses.add( new CourseDetails(name,description,chapters,price));
+					int courseId = rs.getInt("courseId");
+					courses.add( new CourseDetails(name,description,chapters,price,courseId));
 					
 				}
 			}
@@ -50,7 +53,20 @@ public class ViewCourseServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		int courseId = Integer.parseInt(request.getParameter("deleteThisCourse"));
+		try {
+			Connection con;
+			con = DatabaseConnection.initializeDatabase();
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate("DELETE FROM `welearn`.`courses` WHERE (`courseId` = "+courseId+");");
+			doGet(request, response);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 
 }

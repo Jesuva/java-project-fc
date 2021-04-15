@@ -5,12 +5,10 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class EnrollCourseServlet extends HttpServlet {
+public class ViewAllCourses extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
+HttpSession session = request.getSession(false);
 		
 		if(session!=null) {
 			if (session.getAttribute("role").equals("user")) {
@@ -45,7 +43,7 @@ public class EnrollCourseServlet extends HttpServlet {
 						}
 					}
 					request.setAttribute("courseList", courses);
-					RequestDispatcher rd = request.getRequestDispatcher("../user/enrollcourse.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("../admin/viewAllCourses.jsp");
 					rd.include(request, response);
 					
 				}
@@ -64,37 +62,10 @@ public class EnrollCourseServlet extends HttpServlet {
 		}
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
-			HttpSession session = request.getSession(false);
-			if(session!=null) {
-				response.setContentType("text/html");  
-				int courseId = Integer.parseInt(request.getParameter("selectedCourse"));
-				Connection con;
-				con = DatabaseConnection.initializeDatabase();
-				Statement stmt = con.createStatement();
-				ResultSet rs = stmt.executeQuery("select * from courses where courseId="+courseId+"");
-				if(rs.next()) {
-					session.setAttribute("course", rs.getString("courseName"));
-					session.setAttribute("description", rs.getString("courseDescription"));
-				}
-				session.setAttribute("courseId", courseId);
-				PreparedStatement ps = con.prepareStatement("UPDATE `welearn`.`users` SET `enrolledCourses` = ? WHERE (`userId` = ?);\r\n"
-						+ "");
-				ps.setInt(1, courseId);
-				ps.setInt(2, (int)session.getAttribute("id"));
-				ps.executeUpdate();
-				response.sendRedirect("confirm-submission");
-			}
-			else {
-				doGet(request,response);
-			}
-		
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+		doGet(request, response);
 	}
 
 }

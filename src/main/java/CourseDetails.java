@@ -7,6 +7,7 @@ public class CourseDetails {
 	private String chapters;
 	private String description;
 	private int price;
+	private int courseId;
 	public int getPrice() {
 		return price;
 	}
@@ -32,12 +33,21 @@ public class CourseDetails {
 		this.description = description;
 	}
 	
-	
-	CourseDetails(String a, String b, String c, int d){
-		this.name = a;
-		this.chapters = b;
-		this.description = c;
-		this.price = d;
+	public int getCourseId() {
+		return courseId;
 	}
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+	
+	CourseDetails(String a, String b, String c, int d, int e){
+		this.name = a;
+		this.description = b;
+		this.chapters = c;
+		this.price = d;
+		this.courseId=e;
+	}
+	
+	
 	
 }

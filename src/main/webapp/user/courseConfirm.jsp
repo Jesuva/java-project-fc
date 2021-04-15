@@ -16,7 +16,7 @@
 <div class="confirm-course-container">
 <h4>Thanks for Subscribing!</h4>
 <h3>Hi <% out.print((String)session.getAttribute("name")); %> !<br>
-You have enrolled for the <% out.print((String)session.getAttribute("course")); %> course, <% out.print((String)session.getAttribute("level")); %> level!</h3>
+You have enrolled for the <% out.print((String)session.getAttribute("course")); %> course!<br> Author Note: <% out.print((String)session.getAttribute("description")); %></h3>
 <h1>Happy Learning!</h1>
 <a href="/DWP/user/course-enroll"><button>Back To course</button></a>
 </div>

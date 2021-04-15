@@ -16,6 +16,7 @@
 <p>
 <div class="container">
 <h3 class="title">Available Courses</h3>
+<form action="view-course" method="post">
 <table style="margin:auto;">
 <tr>
 <th>Si.No</th>
@@ -23,6 +24,7 @@
 <th>Course Description</th>
 <th>Chapters</th>
 <th>Price</th>
+<th>Actions</th>
 </tr>
 <c:forEach var="course" items="${courseList }" varStatus="counter">
 <tr>
@@ -31,12 +33,11 @@
 <td>${course.description }</td>
 <td>${course.chapters }</td>
 <td>${course.price }</td>
+<td><button type="submit" name="deleteThisCourse" value="${course.courseId }" >Delete</button></td>
 </tr>
 </c:forEach>
 </table>
-
-
-
+</form>
 <a href="/DWP/admin/dashboard" style="float:right;"><button>Back to Dashboard</button></a>
 </div>
 

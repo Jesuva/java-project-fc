@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +37,6 @@
 </table>
 </form>
 <a href="#" style="float:right;"><button>View Enrolled Courses</button></a>
-<a href="#" style="float:right;margin-right:10px;"><button>Add Course</button></a>
 </div>
 
 <br><br>

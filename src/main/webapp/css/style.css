@@ -24,10 +24,11 @@ table{
 	}
 	
 	.main-container{
-	display:inline-flex;
-	margin: 5%;
+	width:50%;
 	border:1px solid black;
 	box-shadow:0 0 10px;
+	margin:5% auto;
+	padding:10px;
 	}
      
 	label{

@@ -46,32 +46,23 @@ public class AddCourseServlet extends HttpServlet {
 			if(session!=null) {
 				Connection con;
 				con = DatabaseConnection.initializeDatabase();
-				Statement stmt=con.createStatement();  
-				ResultSet c = stmt.executeQuery("select count(*) from `welearn`.`courses`");
-				c.next();
-				int courseId = c.getInt(1);
-				courseId = 102+courseId;
-				PreparedStatement ps = con.prepareStatement("INSERT INTO `welearn`.`courses` (`courseId`, `courseName`, `courseDescription`, `chapters`, `studentsCount`, `coursePrice`, `created_by`) VALUES (?,?,?,?,?,?,?);\r\n"
+				PreparedStatement ps = con.prepareStatement("INSERT INTO `welearn`.`courses` (`courseName`, `courseDescription`, `chapters`, `studentsCount`, `coursePrice`, `created_by`) VALUES (?,?,?,?,?,?);\r\n"
 						+ "");
 				response.setContentType("text/html");
 				String courseName = request.getParameter("courseName");
 				String chapters = request.getParameter("chapters");
 				String description = request.getParameter("courseDescription");
 				int price = Integer.parseInt(request.getParameter("price"));
-				ps.setInt(1, courseId);
-				ps.setString(2, courseName);
-				ps.setString(3, description);
-				ps.setString(4, chapters);
-				ps.setString(5, null);
-				ps.setInt(6,price);
-				ps.setInt(7,(int)session.getAttribute("id"));	
+				ps.setString(1, courseName);
+				ps.setString(2, description);
+				ps.setString(3, chapters);
+				ps.setString(4, null);
+				ps.setInt(5,price);
+				ps.setInt(6,(int)session.getAttribute("id"));	
 				ps.executeUpdate();
 				session.setAttribute("courseName", courseName);
 				session.setAttribute("chapters", chapters);
 				session.setAttribute("description", description);
-				CourseList.list.add(new CourseDetails(courseName,chapters,description,price));
-				CourseList cl = new CourseList();
-				session.setAttribute("courselist", cl.getCourseList());
 				response.sendRedirect("add-course-confirm");
 				
 			}

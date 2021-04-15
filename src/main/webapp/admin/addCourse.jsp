@@ -28,7 +28,7 @@ stick to our policy of letting the user to choose their levels!</p>
 <textarea style="resize:none" name="courseDescription" required></textarea><br>
 <input type="submit" value="Add Course">
 </form>
-<a href="/DWP/admin/view-course" style="float:right;margin-left:10px;"><button>View Courses</button></a>
+<a href="/DWP/admin/view-course" style="float:right;margin-left:10px;"><button>View Courses Created By You</button></a>
 <a href="../admin/dashboard" style="float:right;"><button>Back to Dashboard</button></a>
 </div>
 </body>
